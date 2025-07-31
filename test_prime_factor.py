@@ -1,0 +1,3 @@
+from prime_factor import PrimeFactor
+def test_():
+    ...
