@@ -3,13 +3,18 @@ class PrimeFactor:
     def of(self, number):
         factors = []
         if number > 1:
+            divider = 2
             if number == 4:
-                while number % 2 == 0:
-                    factors.append(2)
-                    number //= 2
+                while number % divider == 0:
+                    factors.append(divider)
+                    number //= divider
             elif number == 6:
-                factors.append(2)
-                factors.append(3)
+                divider = 2
+                while number > 1:
+                    while number % divider == 0:
+                        factors.append(divider)
+                        number //= divider
+                    divider += 1
             else:
                 factors.append(number)
         return factors
